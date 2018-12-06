@@ -4,6 +4,12 @@ html {
   overflow: hidden;
 }
 
+.flake{
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  color: 'red';
+}
 
 #snow {
   width: 100%;

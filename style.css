@@ -1,5 +1,37 @@
 html {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #87ceeb 60%, #ffffff 100%);
   overflow: hidden;
+}
+
+
+#snow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#snow .snow {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+}
+
+#snow .snow.clear {
+  width: 1px;
+  height: 1px;
+}
+
+#snow .snow.faint {
+  width: 4px;
+  height: 4px;
+}
+
+#snow .snow.white {
+  background: #fff;
+  box-shadow: 0 0 15px #fff;
 }

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   cursor.addEventListener('mousemove', (e)=>{
-    if (flakes.length < maxFlakes){
+    if (e.clientX%2===0 && e.clientY%2===0){
       // console.log(flakes.length<maxFlakes)
       let flake = document.createElement('div')
       flakes.push(flake)
@@ -55,11 +55,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
       flake.style.top = e.clientY + 'px'
       flake.style.left = e.clientX + 'px'
       letFlakeFall(flake)
-    } else {
+    }
+    if (flakes.length>maxFlakes){
       flakes.forEach(flake=>{
         flake.parentNode.removeChild(flake)
         flakes = []
       })
     }
+    // else {
+    // }
   })
 })

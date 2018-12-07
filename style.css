@@ -53,33 +53,19 @@ html {
   opacity: 1;
   background-image: url('./snowflake2.png');
   background-color: transparent;
-  /* animation: spin 1s linear infinite;
-  animation-duration: 2s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite; */
 }
 
 
-
-/* .flake::after {
-  content: "";
-  background: url('http://designatprinting.com/wp-content/uploads/64800335-big-translucent-crystal-snowflake-in-blue-colors-on-transparent-background-transparency-only-vect-20.jpg');
-
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-} */
-
 .flake.fadeOut{
-  animation-name: flakeFade;
-  animation-duration: 4s;
+  animation: flakeFade 1s, spin 4s;
 }
 
 @keyframes flakeFade {
-  from {opacity: 1; transform:rotate(0deg);}
-  to {opacity: 0; transform:rotate(360deg);}
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
 }

@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function flakeBurstFall(flake){
     let interval = setInterval(()=>{
-      flake.style.top = parseInt(flake.style.top) + 4 + 'px'
-    }, 30)
+      flake.style.top = parseInt(flake.style.top) + 2 + 'px'
+    }, 15)
     setTimeout(()=>{
       meltFlake(flake, interval)
     }, 950)
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   })
 
   function snowFlakeBurst(e){
-    for (let i = 0;i<5;i++){
+    for (let i = 0;i<10;i++){
       let yOffset = Math.floor(Math.random() * 50) + i
       let xOffset = Math.floor(Math.random() * 250) + i
       let flakeBurst = document.createElement('div')

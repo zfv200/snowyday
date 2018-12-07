@@ -4,11 +4,19 @@ html {
   overflow: hidden;
 }
 
-.flake{
-  width: 10px;
-  height: 10px;
+.flakeBurst{
+  cursor: none;
+  /* width: 500px;
+  height: 500px; */
   position: absolute;
-  color: 'red';
+  background-color: #fff;
+  /* background-image: url('./bigSnowflake.png'); */
+  /* background-color: transparent; */
+  border-radius: 50%;
+  opacity: 1;
+  animation: flakeGrow 1.5s;
+  animation-direction: alternate;
+  box-shadow: 0 0 15px #fff;
 }
 
 #snow {
@@ -55,7 +63,6 @@ html {
   background-color: transparent;
 }
 
-
 .flake.fadeOut{
   animation: flakeFade 1s, spin 4s;
 }
@@ -63,6 +70,11 @@ html {
 @keyframes flakeFade {
   from {opacity: 1;}
   to {opacity: 0;}
+}
+
+@keyframes flakeGrow {
+  from {width: 15px; height: 15px;}
+  to {width: 2px; height: 2px;}
 }
 
 @keyframes spin {

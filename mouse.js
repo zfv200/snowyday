@@ -32,23 +32,44 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //   }
     // }
     flake.style.top = parseInt(flake.style.top) + 5 + 'px'
+    flake.className = 'flake fadeOut'
     // if (flake && parseInt(flake.style.top > 500)){
     //   flake.parentNode.removeChild(flake)
+    // console.log("called!")
     // }
   }
 
   function letFlakeFall(flake){
+    // flake.style.opacity = 1
     let interval = setInterval(()=>flakeAnimation(flake), 30);
+    function clearFlake(flake, interval){
+      flake.parentNode.removeChild(flake)
+      flakes = flakes.slice(1)
+      clearInterval(interval)
+    }
+    setTimeout(()=>{
+      clearFlake(flake, interval)
+    }, 2000)
+    // if (flake.style.opacity==="0"){
+    //   flake.parentNode.removeChild(flake)
+    //   clearInterval(interval)
+    // }
     // if (parseInt(flake.style.top)>500){
     //   clearInterval(interval)
     // }
   }
 
+  function fadeOutFlake(flake){
+
+  }
+
   cursor.addEventListener('mousemove', (e)=>{
-    if (e.clientX%2===0 && e.clientY%2===0){
+    // console.log("called!")
+    if (e.clientX%2===0){
       // console.log(flakes.length<maxFlakes)
       let flake = document.createElement('div')
       flakes.push(flake)
+      flake.setAttribute('position', flakes.length)
       flake.className = "flake"
       // flake.innerHTML = "hi"
       cursorSpace.appendChild(flake)
@@ -56,12 +77,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
       flake.style.left = e.clientX + 'px'
       letFlakeFall(flake)
     }
-    if (flakes.length>maxFlakes){
-      flakes.forEach(flake=>{
-        flake.parentNode.removeChild(flake)
-        flakes = []
-      })
-    }
+    // }
+    // if (flakes.length>maxFlakes){
+    //   flakes.forEach(flake=>{
+    //     flake.parentNode.removeChild(flake)
+    //     flakes = []
+    //   })
+    // }
     // else {
     // }
   })

@@ -14,7 +14,7 @@ html {
   /* background-color: transparent; */
   border-radius: 50%;
   opacity: 1;
-  animation: flakeGrow 1.5s;
+  animation: flakeGrow 1s;
   animation-direction: alternate;
   box-shadow: 0 0 15px #fff;
 }

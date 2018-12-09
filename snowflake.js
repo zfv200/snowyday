@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', ()=>{
   let cursorSpace = document.getElementById('cursor')
   let flakes = []
@@ -30,7 +31,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }, 15)
     setTimeout(()=>{
       meltFlake(flake, interval)
-    }, 950)
+    }, 4000)
   }
 
   function createFlake(e){

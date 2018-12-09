@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', ()=>{
   let cursorSpace = document.getElementById('cursor')
   let flakes = []
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   //clickFunc
 
   document.addEventListener('click', (e)=>{
-    snowFlakeBurst(e)
+    snowFlakeBurst(e)    
   })
 
   function snowFlakeBurst(e){

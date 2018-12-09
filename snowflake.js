@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }, 15)
     setTimeout(()=>{
       meltFlake(flake, interval)
-    }, 950)
+    }, 4000)
   }
 
   function createFlake(e){
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   //clickFunc
 
   document.addEventListener('click', (e)=>{
-    snowFlakeBurst(e)    
+    snowFlakeBurst(e)
   })
 
   function snowFlakeBurst(e){

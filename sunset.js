@@ -23,18 +23,17 @@ function sunset(){
     SUNSET = !SUNSET
   }
 
-  let newInner = `rgb(${currentInnerColor[0]}, ${currentInnerColor[1]}, ${currentInnerColor[2]})`
-  let newOuter = `rgb(${currentOuterColor[0]}, ${currentOuterColor[1]}, ${currentOuterColor[2]})`
-
-  return {"newInner": newInner, "newOuter": newOuter, "newPercentage": currentPercentage}
+  let newInner = `rgb(${Math.floor(currentInnerColor[0])}, ${Math.floor(currentInnerColor[1])}, ${Math.floor(currentInnerColor[2])})`
+  let newOuter = `rgb(${Math.floor(currentOuterColor[0])}, ${Math.floor(currentOuterColor[1])}, ${Math.floor(currentOuterColor[2])})`
+  return [newInner, newOuter, currentPercentage]
+  // return {"newInner": newInner, "newOuter": newOuter, "newPercentage": currentPercentage}
 }
 
 function duskOrDawn(){
   let interval = setInterval(()=>{
     let colorObj = sunset()
-    console.log(colorObj);
-    document.querySelector('html').style.background = `radial-gradient(ellipse at bottom, ${colorObj["newInner"]} ${colorObj["newPercentage"]}%, ${colorObj["newOuter"]} 100%)`
-  }, 2)
+    document.querySelector('html').style.background = `radial-gradient(ellipse at bottom, ${colorObj[0]} ${colorObj[2]}%, ${colorObj[1]} 100%)`
+  }, 10)
   return interval
 }
 

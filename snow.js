@@ -2,7 +2,7 @@ let snowyDayWidth = 1600;
 let snowyDayHeight = 800;
 let snowField = document.getElementById('snow')
 
-addSnow(snowyDayWidth, snowyDayHeight, 100);
+addSnow(snowyDayWidth, snowyDayHeight, 500);
 startSnowFall(2, snowField.childNodes);
 
 function placementFunc(){

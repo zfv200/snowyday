@@ -2,7 +2,7 @@ let snowyDayWidth = 1600;
 let snowyDayHeight = 800;
 let snowField = document.getElementById('snow')
 
-addSnow(snowyDayWidth, snowyDayHeight, 500);
+addSnow(snowyDayWidth, snowyDayHeight, 400);
 startSnowFall(2, snowField.childNodes);
 
 function placementFunc(){
@@ -44,7 +44,7 @@ function getSnowMovementPx(flake, index, speed){
   let currentTop = parseInt(flake.style.top)
   let topChangeAmount = speed + snowSpeed(index)
 
-  return currentTop + topChangeAmount < 700 ? currentTop + topChangeAmount : 0
+  return currentTop + topChangeAmount < 800 ? currentTop + topChangeAmount : 0
 }
 
 function snowAnimation(speed, flakes){

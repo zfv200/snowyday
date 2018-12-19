@@ -1,3 +1,4 @@
+DRAWMODE = false
 
 document.addEventListener('DOMContentLoaded', ()=>{
   let cursorSpace = document.getElementById('cursor')
@@ -19,10 +20,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   function letFlakeFall(flake){
-    let interval = setInterval(()=>animateFlake(flake), 30);
-    setTimeout(()=>{
-      meltFlake(flake, interval)
-    }, 1000)
+    if (!DRAWMODE){
+      let interval = setInterval(()=>animateFlake(flake), 30);
+      setTimeout(()=>{
+        meltFlake(flake, interval)
+      }, 1000)
+    } else {
+      // let interval = setInterval(()=>animateFlake(flake), 30);
+      setTimeout(()=>{
+        meltFlake(flake, interval)
+      }, 10000)
+    }
   }
 
   function flakeBurstFall(flake){
@@ -50,6 +58,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
   })
 
   //clickFunc
+  document.addEventListener('keydown', (e)=>{
+    if (e.key==="d"){
+      if (DRAWMODE){
+        Array.prototype.slice.call(document.getElementsByClassName('flake')).forEach(flake=>{
+          meltFlake(flake)
+        })
+      }
+      DRAWMODE = !DRAWMODE
+    }
+  })
 
   document.addEventListener('click', (e)=>{
     snowFlakeBurst(e)
